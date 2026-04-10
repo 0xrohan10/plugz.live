@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: 'Inter', system-ui, sans-serif;
+	--font-display: 'DM Serif Display', serif;
+
+	--color-brand-teal: #0d9488;
+	--color-brand-cyan: #06b6d4;
+	--color-brand-dark: #0a0e1a;
+	--color-brand-dark-surface: #131825;
+
+	--color-surface: #ffffff;
+	--color-surface-secondary: #fafafa;
+	--color-surface-tertiary: #f4f4f5;
+	--color-border: #e4e4e7;
+	--color-border-light: #f4f4f5;
+
+	--color-text-primary: #09090b;
+	--color-text-secondary: #52525b;
+	--color-text-tertiary: #a1a1aa;
+}
