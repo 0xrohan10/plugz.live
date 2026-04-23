@@ -10,9 +10,9 @@
 	];
 </script>
 
-<header class="fixed top-0 z-50 w-full border-b border-border-light bg-surface/80 backdrop-blur-lg">
+<header class="fixed top-0 z-50 w-full border-b border-white/10 bg-brand-dark/90 backdrop-blur-lg">
 	<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-		<a href="/">
+		<a href="/" aria-label="Homepage">
 			<img src="/img/logos/logo-teal-cropped.png" alt="Plugz" class="h-8 w-auto" />
 		</a>
 
@@ -20,7 +20,7 @@
 			{#each navLinks as link}
 				<a
 					href={link.href}
-					class="text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+					class="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
 				>
 					{link.label}
 				</a>
@@ -28,7 +28,7 @@
 		</nav>
 
 		<div class="hidden items-center gap-4 md:flex">
-			<SocialIcons />
+			<SocialIcons variant="dark" />
 		</div>
 
 		<button
@@ -37,7 +37,7 @@
 			aria-label="Toggle menu"
 		>
 			<svg
-				class="size-6 text-text-primary"
+				class="size-6 text-zinc-400"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"
@@ -53,20 +53,20 @@
 	</div>
 
 	{#if mobileOpen}
-		<div class="border-t border-border-light bg-surface px-6 py-6 md:hidden">
+		<div class="border-t border-white/10 bg-brand-dark px-6 py-6 md:hidden">
 			<nav class="flex flex-col gap-4">
 				{#each navLinks as link}
 					<a
 						href={link.href}
-						class="text-base font-medium text-text-secondary transition-colors hover:text-text-primary"
+						class="text-base font-medium text-zinc-400 transition-colors hover:text-white"
 						onclick={() => (mobileOpen = false)}
 					>
 						{link.label}
 					</a>
 				{/each}
 			</nav>
-			<div class="mt-6 border-t border-border-light pt-6">
-				<SocialIcons />
+			<div class="mt-6 border-t border-white/10 pt-6">
+				<SocialIcons variant="dark" />
 			</div>
 		</div>
 	{/if}

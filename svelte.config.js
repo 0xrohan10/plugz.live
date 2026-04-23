@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import { mdsvex } from 'mdsvex';
 import { relative, sep } from 'node:path';
 
@@ -15,7 +15,9 @@ const config = {
 		}
 	},
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			precompress: true
+		})
 	}
 };
 

@@ -1,5 +1,12 @@
 <script lang="ts">
-	let { class: className = '' }: { class?: string } = $props();
+	let { class: className = '', variant = 'light' }: { class?: string; variant?: 'light' | 'dark' } =
+		$props();
+
+	let colors = $derived(
+		variant === 'dark'
+			? 'text-white/50 hover:text-brand-teal'
+			: 'text-zinc-500 hover:text-brand-teal'
+	);
 </script>
 
 <div class="flex items-center gap-4 {className}">
@@ -8,7 +15,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="Instagram"
-		class="text-text-tertiary transition-colors hover:text-brand-teal"
+		class="transition-colors {colors}"
 	>
 		<svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
 			<path
@@ -21,7 +28,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="Facebook"
-		class="text-text-tertiary transition-colors hover:text-brand-teal"
+		class="transition-colors {colors}"
 	>
 		<svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
 			<path
@@ -34,7 +41,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="LinkedIn"
-		class="text-text-tertiary transition-colors hover:text-brand-teal"
+		class="transition-colors {colors}"
 	>
 		<svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
 			<path
